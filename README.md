@@ -1,41 +1,59 @@
-# Adam Benbouazza — Portfolio & Engineering Showcase
+# Adam Benbouazza — Portfolio
 
-Production-grade personal portfolio engineered for **Adam Benbouazza**, Full-Stack Developer & AI Engineer. Built with Next.js (App Router), TypeScript, Tailwind CSS, and Framer Motion, optimized for technical recruiters, engineering managers, and tech leads scanning for 10–60 seconds.
+Personal portfolio of **Adam Benbouazza**, Full-Stack Developer & AI Engineer. Built to be scanned in under 60 seconds by recruiters and engineering leads, with deeper technical case studies for those who keep reading.
 
-## Stack & Architecture
+**Live:** [your-site.vercel.app](https://your-site.vercel.app)
 
-- **Framework**: Next.js 15 (App Router) with 100% Static HTML / SSG generation
-- **Language**: TypeScript (strict type checking across all models)
-- **Styling**: Tailwind CSS with custom WCAG AA compliant design tokens
-- **Data Layer**: Centralized typed content repository in `/content/content.ts` (ready for future FR localization)
-- **Visuals**: Zero-bloat high-fidelity SVG/CSS synthetic telemetry and interface diagrams (anonymized data)
-- **SEO & Metadata**: JSON-LD Person schema, dynamic OpenGraph card generation, sitemap.xml, robots.txt, and SVG favicon
+![Portfolio preview](./public/preview.png)
 
-## Key Sections
+## Highlights
 
-1. **Nav**: Sticky, backdrop blur, mark + name, anchor navigation, theme toggle, and direct CV download.
-2. **Hero**: Precise one-line positioning, industrial proof line at LEONI, two CTAs, contact links, and European relocation status badge.
-3. **Selected Work**: Exactly 3 production projects backed by CV metrics (LEONI Automotive Anomaly Detection, Multi-Practitioner Clinical Scheduling, and SNRT Real-Time Broadcast).
-4. **Interactive Case Studies (`/projects/[slug]`)**: Operational problem, hard engineering constraints, interactive architecture diagram (Option B: hover/tap nodes to inspect technical trade-offs), decisions with rationale ("Why X over Y"), quantified production results, and senior retrospective.
-5. **Interview-Defensible Stack**: Grouped chips (AI/ML, Backend & Systems, Frontend, Data & DevOps) without arbitrary percentages.
-6. **Timeline & Education**: Compact career timeline, Master's in CS & AI (FSAC Casablanca), Bachelor's, and Coursera/AWS/Meta certifications.
-7. **About**: Exactly 73 words, human, first-person, calm and confident, with profile avatar.
-8. **Contact & Footer**: Direct email CTA, PDF CV download, and live availability status indicator.
+- **3 production case studies** with real metrics: anomaly detection at LEONI (XGBoost, SHAP, Isolation Forest), multi-practitioner clinical scheduling, and real-time broadcast at SNRT
+- **Interactive architecture diagrams**: hover or tap a node to see the trade-offs behind each design decision
+- **Fully static**: every page is pre-rendered (SSG), no runtime server needed
+- **Dark/light theme**, accessible color contrast (WCAG AA), responsive down to mobile
+- **SEO-ready**: JSON-LD Person schema, OpenGraph cards, sitemap, robots.txt
 
-## Running Locally
+## Tech Stack
 
-```bash
-# Install dependencies
-npm install
+| Layer | Tools |
+| --- | --- |
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript (strict) |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Hosting | Vercel |
 
-# Run development server
-npm run dev
-# Open http://localhost:3000
+## Project Structure
 
-# Run static production build
-npm run build
+```
+├── app/              # Routes (home, /projects/[slug])
+├── components/       # UI sections and diagrams
+├── content/          # All site content, typed (content.ts)
+└── public/           # CV PDF, images, favicon
 ```
 
-## Deployment to Vercel
+All copy lives in `content/content.ts`, so updating text or adding a project never touches components. The structure is ready for FR localization.
 
-Push the repository to GitHub and import it into Vercel. The project uses standard Next.js App Router defaults with zero external configuration required.
+## Run Locally
+
+```bash
+git clone https://github.com/Adamosfg/PORTFOLIO.git
+cd PORTFOLIO
+npm install
+npm run dev     # http://localhost:3000
+```
+
+```bash
+npm run build   # static production build
+```
+
+## Deploy
+
+Push to GitHub, import the repo in [Vercel](https://vercel.com/new). No extra config needed.
+
+## Contact
+
+- Email: your@email.com
+- LinkedIn: [your-profile](https://linkedin.com/in/your-profile)
+- GitHub: [@Adamosfg](https://github.com/Adamosfg)
