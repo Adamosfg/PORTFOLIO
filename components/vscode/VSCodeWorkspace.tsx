@@ -73,8 +73,8 @@ const ALL_TABS: Record<EditorFileId, EditorTab> = {
 };
 
 export default function VSCodeWorkspace() {
-  // Start with projects.js active, matching the user's inspiration screenshot!
-  const [activeFile, setActiveFile] = useState<EditorFileId>('projects.js');
+  // Default to home.tsx active on initial load
+  const [activeFile, setActiveFile] = useState<EditorFileId>('home.tsx');
   const [openTabs, setOpenTabs] = useState<EditorTab[]>([
     ALL_TABS['home.tsx'],
     ALL_TABS['about.html'],
@@ -114,7 +114,8 @@ export default function VSCodeWorkspace() {
   // Handle URL hash on load (e.g. #projects, #skills, etc.)
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
-    if (hash === 'projects') openFile('projects.js');
+    if (hash === 'home') openFile('home.tsx');
+    else if (hash === 'projects') openFile('projects.js');
     else if (hash === 'skills' || hash === 'stack') openFile('skills.json');
     else if (hash === 'about') openFile('about.html');
     else if (hash === 'experience') openFile('experience.ts');
